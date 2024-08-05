@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJsqJ5vpc9xCZjzpNU2bfisrtABiouqx13fw&s">
+    <title>Okok Team</title>
+    <style>
+      /* Hero Section */
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        list-style: none;
+      }
+
+      .hero {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .navbar {
+        margin: 1rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .navbar ul li a:hover{
+        font-weight: bold;
+      }
+
+      .nav-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .nav-title a {
+        font-size: 20px;
+        color: black;
+        transition: size color 0.8s ease;
+        transition: 0.8s;
+      }
+
+      .nav-title a:hover{
+        font-weight: bold;
+        color: #068cd5;
+        font-size: 22px;
+        transition: size color 0.8s ease;
+        transition: 0.8s;
+      }
+
+      .nav-link ul {
+        list-style: none;
+        padding-left: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-link a {
+        position: relative;
+        color: black;
+        font-weight: 500;
+        margin: 0 15px;
+        transition: width 0.3s ease;
+      }
+
+
+
+      .nav-link a::after {
+        transition: 0.8s;
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: #068cd5;
+        transition: width 0.3s, left 0.3s;
+      }
+      .nav-link a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+
+      .banner {
+        width: 100vw;
+        height: 75vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+
+      .banner-title {
+        margin-top: 10rem;
+        padding: 2rem;
+      }
+
+      .banner-title h1 {
+        font-size: 30px;
+        margin-left: 10px;
+      }
+
+      .banner-title p {
+        margin-left: 8px;
+      }
+
+      .banner-title .okok a {
+        color: grey;
+        transition: 0.5s;
+      }
+
+      .banner-title .okok a:hover {
+        color: lightslategray;
+        font-size: 40px;
+        transition: 0.5s ease-in-out;
+      }
+
+      .banner-img {
+        margin: 5rem;
+        padding: 1rem;
+        background-color: grey;
+        border-radius: 30px;
+      }
+
+      .banner-img img {
+        width: 20rem;
+        border-radius: 30px;
+      }
+      /* hero section end */
+
+      /* About Section */
+      .about {
+        width: 100vw;
+        height: 70vh;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .about-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+      }
+
+      .about-title {
+        text-align: center;
+        font-weight: 600;
+        font-size: x-large;
+        margin-bottom: 20px;
+      }
+
+      .about-content {
+        text-align: center;
+        font-weight: 500;
+        font-size: large;
+      }
+      /* About Section End */
+
+      /* Project Section */
+      .project {
+        padding: 50px 0;
+      }
+      .main-card {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .p-tittle {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+      .card {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .card-1 {
+        width: calc(33.333% - 20px);
+        margin-bottom: 30px;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .card-1:hover {
+        transform: translateY(-5px);
+      }
+      .card-img {
+        position: relative;
+        padding-bottom: 56.25%;
+      }
+      .card-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card-tittle {
+        font-size: 1.25rem;
+        font-weight: 700;
+        padding: 1rem;
+      }
+      .card-body {
+        padding: 1rem;
+      }
+      /* Project Section End */
+
+      /* our team */
+
+      .our-team {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #333;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .team-member {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .member-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover .member-image {
+        transform: scale(1.05);
+      }
+
+      .member-name {
+        font-size: 24px;
+        margin: 20px 0 10px;
+        text-align: center;
+        color: #333;
+      }
+
+      .member-role {
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .member-bio {
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+        padding: 0 20px 20px;
+      }
+
+      @media (max-width: 768px) {
+        .team-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+      }
+
+      /* our team end */
+      /* Footer Section */
+      .footer {
+        background-color: #f5f5f5;
+        height: 30vh;
+      }
+      .footer-content {
+        padding-top: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .footer-links ul {
+        display: flex;
+        gap: 20px;
+      }
+      .footer-links a {
+        position: relative;
+        color: #030013;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+     
+      
+      .footer-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: #068cd5;
+        transition: width 0.3s, left 0.3s;
+      }
+      .footer-links a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      .footer-sosial {
+        display: flex;
+        gap: 15px;
+      }
+      .social-icon img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+      }
+      .social-icon:hover img {
+        transform: scale(1.2);
+      }
+      .copyright {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+      }
+      .animate-fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+      .animate-slide-up {
+        animation: slideUp 0.5s ease-out;
+      }
+      .animate-rotate {
+        animation: rotate 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      /* Footer Section End */
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="navbar">
+        <div class="nav-title"><a href="index.html">Okok.com</a></div>
+        <div class="nav-link">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Our Project</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div class="banner-title">
+          <p>#OkokTeam</p>
+          <h1>Hola 👋 Bienvenido A La Web De</h1>
+          <h1 class="okok"><a href="index.html">Okok.com</a></h1>
+        </div>
+        <div class="banner-img">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJsqJ5vpc9xCZjzpNU2bfisrtABiouqx13fw&s"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <section class="about">
+        <div class="about-main">
+      <div class="about-title">About us</div>
+      <div class="about-content">
+        <ul>
+          <p>Our Full Stack Developer team consists of highly skilled professionals who excel in both front-end and back-end development. With expertise in various programming languages, frameworks, and tools, we handle complex, multi-faceted projects. We create seamless, user-friendly interfaces while ensuring robust, secure, and scalable server-side solutions. Our team members are proficient in technologies like HTML, CSS, JavaScript, Python, Node.js, Ruby, and Java, along with databases like SQL and NoSQL. We also leverage cloud services like AWS and Azure to deliver comprehensive solutions.</p>
+          <br>
+          <p>Collaboration is key to our team's success. We work closely with designers, project managers, and stakeholders to ensure our solutions meet high standards and align with client goals. Embracing Agile methodologies, we stay flexible and responsive to changing project needs. Our team is committed to continuous learning and skill enhancement. This dedication to delivering end-to-end solutions that drive success distinguishes us as a dynamic and reliable Full Stack Developer team.</p>
+        </ul>
+      </div>
+    </div>
+    </section>
+    
+    <section class="project">
+      <div class="main-card">
+        <div class="p-tittle">
+          <h1>Our Project</h1>
+        </div>
+        <div class="card">
+            <div class="card-1">
+                <div class="card-tittle">
+                    <h2>Okok.com</h2>
+                </div>
+                <div class="card-img">
+                    <img src="img/okokbanner.png" width="500">
+                </div>
+                <div class="card-body">
+                    <p>Okok.com is a agency web that we made for help many <br>people on  web programming and application problem</p>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card-tittle">
+                    <h2>Okok.com</h2>
+                </div>
+                <div class="card-img">
+                    <img src="img/okokbanner.png" width="500">
+                </div>
+                <div class="card-body">
+                    <p>Okok.com is a agency web that we made for help many <br>people on  web programming and application problem</p>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card-tittle">
+                    <h2>Okok.com</h2>
+                </div>
+                <div class="card-img">
+                    <img src="img/okokbanner.png" width="500">
+                </div>
+                <div class="card-body">
+                    <p>Okok.com is a agency web that we made for help many <br>people on  web programming and application problem</p>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <section class="our-team">
+      <div class="container">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="img/Screenshot 2024-08-05 at 08.58.13.png" alt="Anggota Tim 1" class="member-image">
+            <h3 class="member-name">Mirza Danish F</h3>
+            <p class="member-role">Section Hero</p>
+            <p class="member-bio">Fronted-end developer</p>
+          </div>
+          <div class="team-member">
+            <img src="img/sapik.jpeg" alt="Anggota Tim 2" class="member-image">
+            <h3 class="member-name">Syafik A</h3>
+            <p class="member-role">Section About</p>
+            <p class="member-bio">Full stack developer</p>
+          </div>
+          <div class="team-member">
+            <img src="img/abdul.jpeg" alt="Anggota Tim 3" class="member-image">
+            <h3 class="member-name">Abdullah</h3>
+            <p class="member-role">Section Project</p>
+            <p class="member-bio">Backed-end developer</p>
+          </div>
+          <div class="team-member">
+            <img src="img/927_.jpg" alt="Anggota Tim 4" class="member-image">
+            <h3 class="member-name">Fadlan H</h3>
+            <p class="member-role">Section Footer</p>
+            <p class="member-bio">Full stack developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-content">
+        <div class="footer-links animate-fade-in">
+          <ul>
+            <li>
+              <a href="#" class="animate-slide-up hover-effect">Tentang</a>
+            </li>
+            <li>
+              <a href="#" class="animate-slide-up hover-effect">Manfaat</a>
+            </li>
+            <li><a href="#" class="animate-slide-up hover-effect">Karir</a></li>
+            <li>
+              <a href="#" class="animate-slide-up hover-effect">Dukungan</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-sosial animate-fade-in">
+          <a href="#" class="animate-rotate social-icon"
+            ><img src="img/facebook (1).png" alt="Facebook"
+          /></a>
+          <a href="#" class="animate-rotate social-icon"
+            ><img src="img/twitter.png" alt="Twitter"
+          /></a>
+          <a href="#" class="animate-rotate social-icon"
+            ><img src="img/instagram (1).png" alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <p class="copyright animate-fade-in">
+        &copy; 2024 Okok.com. Hak Cipta Dilindungi.
+      </p>
+    </section>
+  </body>
+</html>
