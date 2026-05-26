@@ -11,7 +11,7 @@ permissions:
   pages: write
   id-token: write
 
-# Memastikan hanya satu penyebaran yang berjalan pada satu waktu
+# Memastikan hanya satu penyebaran yang berjalan pada satu waktu 
 concurrency:
   group: 'pages'
   cancel-in-progress: true
