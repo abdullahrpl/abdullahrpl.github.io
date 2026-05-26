@@ -1,0 +1,817 @@
+/* App.css - adoption of en.bazil.fr custom layouts & elements */
+
+/* Custom Cursor Pointer */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.cursor__circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--accent-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor__dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Expanding cursor on hover */
+.cursor__circle.is--hovered {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(253, 162, 40, 0.1);
+  border-color: var(--accent-color);
+}
+
+.cursor__circle.is--hovered .cursor__dot {
+  opacity: 0;
+}
+
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.panel-left-anim, .panel-right-anim {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-secondary);
+  transform: skew(0, -45deg);
+  z-index: 1;
+}
+
+.panel-left-anim {
+  left: -50%;
+  transform: translate3d(0, 0, 0) skew(0, -45deg);
+}
+
+.panel-right-anim {
+  right: -50%;
+  transform: translate3d(0, 0, 0) skew(0, -45deg);
+}
+
+.preloader__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--text-primary);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 2vw;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Minimalist Nav (bazil.fr style) */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background-color: transparent;
+  padding: 40px 0;
+  transition: var(--transition-smooth);
+}
+
+.nav.scrolled {
+  background-color: rgba(11, 11, 11, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container-xl.is--menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo-link {
+  display: inline-block;
+}
+
+.nav__logo-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.nav__logo-text span {
+  color: var(--accent-color);
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__item {
+  font-family: "Exo", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.nav__item:hover, .nav__item.active {
+  color: var(--text-primary);
+}
+
+/* Language Switcher */
+.wg-element-wrapper {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 4px;
+  background-color: var(--bg-secondary);
+  gap: 4px;
+}
+
+.wg-selector {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 50px;
+  transition: var(--transition-fast);
+}
+
+.wg-selector.active {
+  color: var(--bg-primary);
+  background-color: var(--accent-color);
+}
+
+/* Pill CTA Button */
+.cta.menu {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  border-radius: 50px;
+  padding: 10px 24px;
+  background-color: transparent;
+  transition: var(--transition-fast);
+}
+
+.cta.menu:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Main Section Structure */
+.section {
+  padding: 140px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Hero Section (bazil.fr typography layout) */
+.section.is--intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 180px;
+  position: relative;
+}
+
+.intro__content-wrapper {
+  max-width: 1000px;
+  position: relative;
+  z-index: 10;
+}
+
+.intro__text.is--first {
+  font-family: "Exo", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.heading-outline__wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.heading-xl-bazil {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8vw;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+/* Solid Hero Titles */
+.intro__link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  line-height: 0.95;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.intro__link:hover {
+  color: var(--accent-color);
+}
+
+.intro__bottom-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.intro__text.is--left {
+  font-family: "Exo", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Logo Ticker Marquee */
+.intro__clients {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.client__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0.5;
+  transition: var(--transition-fast);
+}
+
+.client__logo-wrapper:hover {
+  opacity: 1;
+}
+
+.client__logo-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.client__logo-divider {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* Profile Photo placed in background behind text */
+.intro__photo {
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+  width: 32vw;
+  max-width: 480px;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+  filter: contrast(1.1) brightness(0.85);
+  animation: float-photo 6s ease-in-out infinite;
+}
+
+@keyframes float-photo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Hero Bottom Buttons */
+.intro__buttons {
+  display: flex;
+  gap: 24px;
+  margin-top: 60px;
+  z-index: 10;
+  position: relative;
+}
+
+.cta__mobile {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px 40px;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.cta__mobile.filled {
+  background-color: var(--accent-color);
+  color: #0b0b0b;
+  box-shadow: 0 10px 30px rgba(253, 162, 40, 0.25);
+}
+
+.cta__mobile.filled:hover {
+  background-color: var(--text-primary);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.cta__mobile.ghost {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-hover);
+}
+
+.cta__mobile.ghost:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-4px);
+}
+
+/* Section Headings */
+.section-header-bazil {
+  margin-bottom: 80px;
+}
+
+.heading-section-outlined {
+  font-family: "Montserrat", sans-serif;
+  font-size: 7vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  line-height: 0.95;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.heading-section-outlined span {
+  color: var(--accent-color);
+}
+
+.heading-section-outlined:hover {
+  color: var(--accent-color);
+}
+
+/* About Section */
+.about__copy-wrapper {
+  max-width: 900px;
+}
+
+.about__copy {
+  font-family: "Exo", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+}
+
+.about__copy span {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.about__subcopy {
+  font-family: "Exo", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 700px;
+}
+
+/* Projects Grid - bazil.fr Offset Style */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 60px;
+  margin-top: 40px;
+}
+
+/* Shift the second column down to create Bazil's staggered grid */
+@media (min-width: 768px) {
+  .project-card:nth-child(2n) {
+    margin-top: 80px;
+  }
+}
+
+.project-card {
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.project-image-wrapper {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: grayscale(0.2);
+}
+
+.project-card:hover .project-image-wrapper {
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px);
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+
+.project-title-bazil {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.project-card:hover .project-title-bazil {
+  color: var(--accent-color);
+}
+
+.project-desc-bazil {
+  font-family: "Exo", sans-serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.project-tags-bazil {
+  display: flex;
+  gap: 12px;
+}
+
+.project-tags-bazil span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+}
+
+/* Certificates Layout (Horizontal slide with progress indicator) */
+.certificates-scroller {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.certificates-scroller::-webkit-scrollbar {
+  height: 0px;
+}
+
+.certificate-card-bazil {
+  flex-shrink: 0;
+  width: 380px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.certificate-card-bazil:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(253, 162, 40, 0.05);
+}
+
+.certificate-img-wrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.certificate-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.certificate-card-bazil:hover .certificate-img-wrapper img {
+  transform: scale(1.04);
+}
+
+.certificate-details {
+  padding: 30px;
+}
+
+.certificate-details h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.certificate-details .issuer {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certificate-details .date {
+  font-family: "Exo", sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Skills Grid */
+.skills-grid-bazil {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skill-box-bazil {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  transition: var(--transition-smooth);
+}
+
+.skill-box-bazil:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-6px);
+}
+
+.skill-box-bazil h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.skill-box-bazil ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-box-bazil li {
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-fast);
+}
+
+.skill-box-bazil li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.skill-box-bazil li:hover {
+  color: var(--text-primary);
+  transform: translateX(6px);
+}
+
+/* Contact Area */
+.contact-wrapper-bazil {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-headline-bazil {
+  font-family: "Montserrat", sans-serif;
+  font-size: 6vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: normal;
+  margin-bottom: 30px;
+}
+
+.contact-email-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4vw;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: inline-block;
+  position: relative;
+  transition: var(--transition-fast);
+  padding-bottom: 8px;
+}
+
+.contact-email-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-email-link:hover {
+  color: var(--accent-color);
+}
+
+.contact-email-link:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-socials-bazil {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.social-circle-bazil {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  transition: var(--transition-smooth);
+}
+
+.social-circle-bazil:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(253, 162, 40, 0.15);
+}
+
+/* Footer Section */
+.footer-bazil {
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-bazil p {
+  font-family: "Exo", sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .intro__photo {
+    opacity: 0.2;
+    width: 45vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__menu {
+    display: none;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .heading-xl-bazil, .intro__link {
+    font-size: 10vw;
+  }
+  
+  .intro__bottom-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .intro__photo {
+    display: none;
+  }
+  
+  .intro__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta__mobile {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .project-title-bazil {
+    font-size: 24px;
+  }
+  
+  .skills-grid-bazil {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .skill-box-bazil {
+    padding: 30px;
+  }
+  
+  .contact-headline-bazil {
+    font-size: 8vw;
+  }
+  
+  .contact-email-link {
+    font-size: 6vw;
+  }
+  
+  .certificate-card-bazil {
+    width: 280px;
+  }
+}

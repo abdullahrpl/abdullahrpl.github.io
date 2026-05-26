@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo">Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="./images/profile.jpg" alt="Profile photo">
+        </div>
+        <div class="image-border"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-subtitle">Full-Stack Developer</p>
+        <h1 class="hero-title">Abdullah </h1>
+        <p class="hero-description">
+          Crafting minimal and functional digital experiences with clean code and thoughtful design.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/abdullahrpl" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/abdullah-98832634b/" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:abdaja.9@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+        <a href="#projects" class="cta-button">
+          View my work
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <p>
+          I'm a developer based in Bogor, Indonesia with a focus on creating clean, user-centered digital
+          experiences. I believe in the power of simplicity and thoughtful design.
+        </p>
+        <p>
+          I am currently a student with a strong interest in web development, seeking opportunities to gain real-world experience and grow my skills through hands-on projects.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new coffee shops, reading about design, or taking photographs
+          around the city.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <h2 class="section-title">Projects</h2>
+        <a href="#" class="view-all-link">
+          View All
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="projects-grid">
+        <a href="https://yamyam.vercel.app/" class="project-card">
+          <div class="project-image">
+            <img src="./images/SEM2-1RPL.png" alt="E-Commerce Platform">
+          </div>
+          <div class="project-info">  
+            <div class="project-header">
+              <h3>E-Commerce Website</h3>
+            </div>
+            <p>A minimal online store with focus on user experience and fast checkout.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/abdullahrpl/e-library" class="project-card">
+          <div class="project-image">
+            <img src="./images/Frame24.png" alt="Task Management App">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>E-Library Website</h3>
+            </div>
+            <p>An online library, where librarian put their book data.</p>
+            <div class="project-tags">
+              <span>Tailwind</span>
+              <span>JavaScript</span>
+              <span>Laravel</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/abdullahrpl/pay-roll" class="project-card">
+          <div class="project-image">
+            <img src="./images/Frame25.png" alt="Task Management App">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>Pay-Roll Website</h3>
+            </div>
+            <p>A wage payment website.</p>
+            <div class="project-tags">
+              <span>Tailwind</span>
+              <span>JavaScript</span>
+              <span>Laravel</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com/abdullahrpl/news_app" class="project-card">
+          <div class="project-image">
+            <img src="./images/Frame27.png" alt="Task Management App">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>Newest</h3>
+            </div>
+            <p>A news application.</p>
+            <div class="project-tags">
+              <span>Flutter</span>
+              <span>GetX</span>
+              <span>Dart</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section class="certificates" id="certificates">
+    <div class="container">
+      <div class="section-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <h2 class="section-title">Certificates</h2>
+      </div>
+      <div class="certificates-wrapper">
+        <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="certificates-scroll">
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="./images/dicoding-prompt.jpg" alt="AWS Certified Developer">
+            </div>
+            <div class="certificate-info">
+              <h3>Prompt Engineer for Software Developer</h3>
+              <p class="certificate-issuer">Dicoding</p>
+              <p class="certificate-date">2025</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="./images/dicoding-python.jpg" alt="Google UX Design Certificate">
+            </div>
+            <div class="certificate-info">
+              <h3>Python Basic</h3>
+              <p class="certificate-issuer">Dicoding</p>
+              <p class="certificate-date">2025</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="./images/dicoding-ai.jpg" alt="Meta Front-End Developer">
+            </div>
+            <div class="certificate-info">
+              <h3>AI Basic</h3>
+              <p class="certificate-issuer">Dicoding</p>
+              <p class="certificate-date">2025</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="./images/coursera-python-data-science.jpg" alt="Meta Front-End Developer">
+            </div>
+            <div class="certificate-info">
+              <h3>Python for Data Science</h3>
+              <p class="certificate-issuer">Coursera</p>
+              <p class="certificate-date">2026</p>
+            </div>
+          </div>
+          <div class="certificate-card">
+            <div class="certificate-image">
+              <img src="./images/coursera-AI-flask.jpg" alt="Meta Front-End Developer">
+            </div>
+            <div class="certificate-info">
+              <h3>AI with Flask</h3>
+              <p class="certificate-issuer">Coursera</p>
+              <p class="certificate-date">2026</p>
+            </div>
+          </div>
+        </div>
+        <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <ul>
+            <li>Git</li>
+            <li>Figma</li>
+            <li>PyTorch</li>
+            <li>Flask</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-heading">Let's work together</p>
+      <p class="contact-description">
+        Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:abdaja.9@gmail.com" class="contact-link" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://github.com/abdullahrpl" target="_blank" class="contact-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abdullah-idn/" target="_blank" class="contact-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Abdullah. Programmer.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for certificate scroll functionality -->
+  <script>
+    // Certificate scroll buttons
+    const scrollContainer = document.querySelector('.certificates-scroll');
+    const scrollLeftBtn = document.querySelector('.scroll-btn-left');
+    const scrollRightBtn = document.querySelector('.scroll-btn-right');
+    
+    if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+      scrollLeftBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      
+      scrollRightBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

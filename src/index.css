@@ -1,0 +1,122 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* en.bazil.fr Color System: Extreme High-Contrast Dark */
+  --bg-primary: #0b0b0b;
+  --bg-secondary: #141414;
+  --bg-muted: #1c1c1c;
+  --text-primary: #ffffff;
+  --text-secondary: #8a8a8a;
+  
+  /* Signature Bazil Amber/Orange Accent */
+  --accent-color: #fda228;
+  --accent-rgb: 253, 162, 40;
+  
+  --border-color: #222222;
+  --border-hover: #444444;
+  
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Exo", "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* en.bazil.fr Orange Selection Highlights */
+::selection {
+  background-color: var(--accent-color);
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: var(--accent-color);
+  color: #000000;
+}
+
+/* Custom Scrollbar (Invisible or Ultra Minimal like Bazil's scroll: none) */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Hide cursor on desktop to support our custom trailing cursor pointer */
+@media (pointer: fine) {
+  body, a, button, select, input, textarea, .scroll-btn, .cta, .project-card {
+    cursor: none !important;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+}
+
+.container-xl {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+
+
+/* Global Transition Panels (Sliding Diagonal Curtains) */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.panel__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-left, .panel-right {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  transform: skew(0, -45deg);
+  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.panel-left {
+  left: -50vw;
+}
+
+.panel-right {
+  right: -50vw;
+}
