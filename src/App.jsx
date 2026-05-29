@@ -17,6 +17,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [transitionTrigger, setTransitionTrigger] = useState(0);
   const [isCvOpen, setIsCvOpen] = useState(false);
+  const [lang, setLang] = useState('EN');
 
   // Smooth diagonal curtain routing handler
   const navigateTo = (page) => {
@@ -37,27 +38,27 @@ function App() {
       <Preloader trigger={transitionTrigger} />
       <CustomCursor />
       
-      <Header onNavigate={navigateTo} currentPage={currentPage} />
+      <Header onNavigate={navigateTo} currentPage={currentPage} lang={lang} setLang={setLang} />
       
       <main>
         {currentPage === 'home' ? (
           <>
-            <Hero onNavigate={navigateTo} onShowCv={() => setIsCvOpen(true)} />
-            <About />
-            <Projects onNavigate={navigateTo} />
-            <Certificates />
-            <Skills />
-            <Contact />
+            <Hero onNavigate={navigateTo} onShowCv={() => setIsCvOpen(true)} lang={lang} />
+            <About lang={lang} />
+            <Projects onNavigate={navigateTo} lang={lang} />
+            <Certificates lang={lang} />
+            <Skills lang={lang} />
+            <Contact lang={lang} />
           </>
         ) : (
-          <AllProjects onNavigate={navigateTo} />
+          <AllProjects onNavigate={navigateTo} lang={lang} />
         )}
       </main>
 
       <Footer />
 
       {/* PDF CV Popup Modal */}
-      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
+      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} lang={lang} />
     </>
   );
 }

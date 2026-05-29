@@ -1,6 +1,7 @@
 import React from 'react';
+import { translations } from '../data/translations';
 
-const Hero = ({ onNavigate, onShowCv }) => {
+const Hero = ({ onNavigate, onShowCv, lang }) => {
 
   const handleScrollTo = (e, id) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const Hero = ({ onNavigate, onShowCv }) => {
       <div className="container-xl">
         <div className="intro__content-wrapper">
           <div className="intro__text is--first">
-            👋, my name is Abdullah and I am a 
+            {translations[lang].hero.intro}
           </div>
           
           {/* Title 1: Software */}
@@ -32,7 +33,7 @@ const Hero = ({ onNavigate, onShowCv }) => {
               className="intro__link"
               onClick={(e) => handleScrollTo(e, 'projects')}
             >
-              Software
+              {translations[lang].hero.software}
             </a>
           </div>
 
@@ -43,13 +44,13 @@ const Hero = ({ onNavigate, onShowCv }) => {
               className="intro__link"
               onClick={(e) => handleScrollTo(e, 'contact')}
             >
-              Developer
+              {translations[lang].hero.developer}
             </a>
           </div>
 
           <div className="intro__bottom-text">
             <div className="intro__text is--left">
-              based in Bogor, Indonesia.
+              {translations[lang].hero.basedIn}
             </div>
             
             {/* Minimal logo/skill marquee row in Bazil's style */}
@@ -81,7 +82,7 @@ const Hero = ({ onNavigate, onShowCv }) => {
             className="cta__mobile filled"
             onClick={(e) => handleScrollTo(e, 'contact')}
           >
-            You need a developer
+            {translations[lang].hero.ctaDeveloper}
           </a>
           <a 
             href="#cv" 
@@ -91,7 +92,7 @@ const Hero = ({ onNavigate, onShowCv }) => {
               onShowCv();
             }}
           >
-            My CV
+            {translations[lang].hero.ctaCv}
           </a>
         </div>
       </div>

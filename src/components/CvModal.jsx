@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { translations } from '../data/translations';
 
-const CvModal = ({ isOpen, onClose }) => {
+const CvModal = ({ isOpen, onClose, lang }) => {
   // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -19,7 +20,7 @@ const CvModal = ({ isOpen, onClose }) => {
     <div className="cv-modal-overlay" onClick={onClose}>
       <div className="cv-modal-container animate-fade-in-up" onClick={(e) => e.stopPropagation()}>
         <div className="cv-modal-header">
-          <h2 className="cv-modal-title">Curriculum Vitae</h2>
+          <h2 className="cv-modal-title">{translations[lang].cvModal.title}</h2>
           <div className="cv-modal-actions">
             <a 
               href="/cv.pdf" 
@@ -27,7 +28,7 @@ const CvModal = ({ isOpen, onClose }) => {
               rel="noopener noreferrer" 
               className="cv-modal-full-view"
             >
-              Buka Penuh ↗
+              {translations[lang].cvModal.openFull}
             </a>
             <button className="cv-modal-close" onClick={onClose} aria-label="Close modal">
               ✕
@@ -43,8 +44,8 @@ const CvModal = ({ isOpen, onClose }) => {
             style={{ border: 'none' }}
           >
             <p>
-              Browser Anda tidak mendukung melihat PDF secara langsung. 
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"> Klik di sini untuk mengunduh PDF.</a>
+              {translations[lang].cvModal.fallback}
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"> {translations[lang].cvModal.download}</a>
             </p>
           </iframe>
         </div>

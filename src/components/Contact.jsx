@@ -1,17 +1,18 @@
 import React from 'react';
+import { translations } from '../data/translations';
 
-const Contact = () => {
+const Contact = ({ lang }) => {
   return (
     <section className="section is--contact" id="contact">
       <div className="container-xl">
         <div className="section-header-bazil">
           <h2 className="heading-section-outlined">
-            <span>05 / </span>CONTACT
+            <span>05 / </span>{translations[lang].contact.title}
           </h2>
         </div>
 
         <div className="contact-wrapper-bazil">
-          <h3 className="contact-headline-bazil">LET'S START A PROJECT!</h3>
+          <h3 className="contact-headline-bazil">{translations[lang].contact.headline}</h3>
           <a href="mailto:abdaja.9@gmail.com" className="contact-email-link">
             abdaja.9@gmail.com
           </a>

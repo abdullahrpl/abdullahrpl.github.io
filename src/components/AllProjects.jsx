@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { projectsData } from '../data/projects';
+import { translations } from '../data/translations';
 
-const AllProjects = ({ onNavigate }) => {
+const AllProjects = ({ onNavigate, lang }) => {
   // Auto scroll to top when page opens
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,14 +18,14 @@ const AllProjects = ({ onNavigate }) => {
       <div className="container-xl">
         <div className="projects-header" style={{ marginBottom: '60px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h2 className="heading-section-outlined">
-            <span>/ </span>ALL PROJECTS
+            <span>/ </span>{translations[lang].allProjects.title}
           </h2>
           <a 
             href="#home" 
             className="view-all-link"
             onClick={handleBackClick}
           >
-            ← Back to Home
+            {translations[lang].allProjects.backToHome}
           </a>
         </div>
 
@@ -41,7 +42,7 @@ const AllProjects = ({ onNavigate }) => {
                 <img src={project.image} alt={project.title} loading="lazy" />
               </div>
               <h3 className="project-title-bazil">{project.title}</h3>
-              <p className="project-desc-bazil">{project.description}</p>
+              <p className="project-desc-bazil">{project.description[lang]}</p>
               <div className="project-tags-bazil">
                 {project.tags.map((tag, tagIdx) => (
                   <span key={tagIdx}>{tag}</span>
@@ -58,7 +59,7 @@ const AllProjects = ({ onNavigate }) => {
             onClick={handleBackClick}
             style={{ display: 'inline-block' }}
           >
-            Back to Homepage
+            {translations[lang].allProjects.backToHomepageBtn}
           </a>
         </div>
       </div>

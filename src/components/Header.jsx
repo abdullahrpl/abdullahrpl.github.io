@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { translations } from '../data/translations';
 
-const Header = ({ onNavigate, currentPage }) => {
+const Header = ({ onNavigate, currentPage, lang, setLang }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [lang, setLang] = useState('EN'); // Aesthetic EN/ID toggler
 
   // Scroll detection
   useEffect(() => {
@@ -114,35 +114,35 @@ const Header = ({ onNavigate, currentPage }) => {
             className={`nav__item ${currentPage === 'home' && activeSection === 'about' ? 'active' : ''}`}
             onClick={(e) => handleNavLinkClick(e, 'about')}
           >
-            About
+            {translations[lang].nav.about}
           </a>
           <a 
             href="#projects" 
             className={`nav__item ${currentPage === 'projects' || (currentPage === 'home' && activeSection === 'projects') ? 'active' : ''}`}
             onClick={(e) => handleNavLinkClick(e, 'projects')}
           >
-            Projects
+            {translations[lang].nav.projects}
           </a>
           <a 
             href="#certificates" 
             className={`nav__item ${currentPage === 'home' && activeSection === 'certificates' ? 'active' : ''}`}
             onClick={(e) => handleNavLinkClick(e, 'certificates')}
           >
-            Certifications
+            {translations[lang].nav.certifications}
           </a>
           <a 
             href="#skills" 
             className={`nav__item ${currentPage === 'home' && activeSection === 'skills' ? 'active' : ''}`}
             onClick={(e) => handleNavLinkClick(e, 'skills')}
           >
-            Skills
+            {translations[lang].nav.skills}
           </a>
           <a 
             href="#contact" 
             className={`nav__item ${currentPage === 'home' && activeSection === 'contact' ? 'active' : ''}`}
             onClick={(e) => handleNavLinkClick(e, 'contact')}
           >
-            Contact
+            {translations[lang].nav.contact}
           </a>
 
           {/* Aesthetic Language Selector */}

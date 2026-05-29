@@ -1,6 +1,7 @@
 import React from 'react';
+import { translations } from '../data/translations';
 
-const Skills = () => {
+const Skills = ({ lang }) => {
   const skillCategories = [
     {
       title: 'FRONTEND',
@@ -71,7 +72,7 @@ const Skills = () => {
       <div className="container-xl">
         <div className="skills-header" style={{ marginBottom: '10px' }}>
           <h2 className="heading-section-outlined">
-            <span>04 / </span>SKILLS
+            <span>04 / </span>{translations[lang].skills.title}
           </h2>
         </div>
 

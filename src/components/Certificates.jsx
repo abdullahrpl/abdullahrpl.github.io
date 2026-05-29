@@ -1,6 +1,7 @@
 import React from 'react';
+import { translations } from '../data/translations';
 
-const Certificates = () => {
+const Certificates = ({ lang }) => {
   const certificatesList = [
     {
       title: 'Prompt Engineer for Software Developer',
@@ -45,7 +46,7 @@ const Certificates = () => {
       <div className="container-xl">
         <div className="projects-header" style={{ marginBottom: '60px' }}>
           <h2 className="heading-section-outlined">
-            <span>03 / </span>CERTIFICATES
+            <span>03 / </span>{translations[lang].certificates.title}
           </h2>
         </div>
 
