@@ -29,4 +29,11 @@ export const projectsData = [
     link: 'https://github.com/abdullahrpl/news_app',
     tags: ['Flutter', 'GetX', 'Dart'],
   },
+  {
+    title: 'IT Asset Management',
+    description: 'A system for managing IT assets in an organization.',
+    image: '/images/itam_flyer.png',
+    link: '',
+    tags: ['Golang', 'Tailwind CSS', 'PostgreSQL', 'Wails'],
+  },
 ];

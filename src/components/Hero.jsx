@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = () => {
+const Hero = ({ onNavigate, onShowCv }) => {
 
   const handleScrollTo = (e, id) => {
     e.preventDefault();
@@ -22,28 +22,28 @@ const Hero = () => {
       <div className="container-xl">
         <div className="intro__content-wrapper">
           <div className="intro__text is--first">
-            👋, my name is Abdullah and I am a Software Developer
+            👋, my name is Abdullah and I am a 
           </div>
           
-          {/* Title 1: Developer */}
+          {/* Title 1: Software */}
           <div className="heading-outline__wrapper">
             <a 
               href="#projects" 
               className="intro__link"
               onClick={(e) => handleScrollTo(e, 'projects')}
             >
-              Developer
+              Software
             </a>
           </div>
 
-          {/* Title 2: & Designer */}
+          {/* Title 2: Developer */}
           <div className="heading-outline__wrapper">
             <a 
               href="#contact" 
               className="intro__link"
               onClick={(e) => handleScrollTo(e, 'contact')}
             >
-              &amp; Designer
+              Developer
             </a>
           </div>
 
@@ -84,10 +84,12 @@ const Hero = () => {
             You need a developer
           </a>
           <a 
-            href="/cv.pdf" 
+            href="#cv" 
             className="cta__mobile ghost"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              onShowCv();
+            }}
           >
             My CV
           </a>

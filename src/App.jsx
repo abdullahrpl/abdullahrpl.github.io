@@ -10,11 +10,13 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AllProjects from './components/AllProjects';
+import CvModal from './components/CvModal';
 import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [transitionTrigger, setTransitionTrigger] = useState(0);
+  const [isCvOpen, setIsCvOpen] = useState(false);
 
   // Smooth diagonal curtain routing handler
   const navigateTo = (page) => {
@@ -40,7 +42,7 @@ function App() {
       <main>
         {currentPage === 'home' ? (
           <>
-            <Hero onNavigate={navigateTo} />
+            <Hero onNavigate={navigateTo} onShowCv={() => setIsCvOpen(true)} />
             <About />
             <Projects onNavigate={navigateTo} />
             <Certificates />
@@ -53,6 +55,9 @@ function App() {
       </main>
 
       <Footer />
+
+      {/* PDF CV Popup Modal */}
+      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
     </>
   );
 }

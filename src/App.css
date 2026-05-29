@@ -37,7 +37,7 @@
 .cursor__circle.is--hovered {
   width: 70px;
   height: 70px;
-  background-color: rgba(253, 162, 40, 0.1);
+  background-color: rgba(var(--accent-rgb), 0.1);
   border-color: var(--accent-color);
 }
 
@@ -362,7 +362,7 @@
 .cta__mobile.filled {
   background-color: var(--accent-color);
   color: #0b0b0b;
-  box-shadow: 0 10px 30px rgba(253, 162, 40, 0.25);
+  box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.25);
 }
 
 .cta__mobile.filled:hover {
@@ -544,7 +544,7 @@
 .certificate-card-bazil:hover {
   border-color: var(--accent-color);
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(253, 162, 40, 0.05);
+  box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.05);
 }
 
 .certificate-img-wrapper {
@@ -727,7 +727,7 @@
   border-color: var(--accent-color);
   color: var(--text-primary);
   transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(253, 162, 40, 0.15);
+  box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.15);
 }
 
 /* Footer Section */
@@ -815,3 +815,230 @@
     width: 280px;
   }
 }
+
+/* --- TECHNICAL ARSENAL SKILLS DESIGN --- */
+.skills-subtitle-alt {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.skills-grid-alt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.skill-box-alt {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-box-alt:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.skill-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.skill-box-header h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.skill-box-icon-container {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  background-color: var(--bg-primary);
+  transition: var(--transition-fast);
+}
+
+.skill-box-alt:hover .skill-box-icon-container {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-primary);
+  transform: scale(1.05);
+}
+
+.skill-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge-pill {
+  font-family: "Exo", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: var(--transition-fast);
+}
+
+.skill-badge-pill:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-color);
+  background-color: rgba(var(--accent-rgb), 0.08);
+}
+
+/* --- CURRICULUM VITAE MODAL OVERLAY --- */
+.cv-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.cv-modal-container {
+  width: 100%;
+  max-width: 900px;
+  height: 85vh;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(var(--accent-rgb), 0.06);
+}
+
+.cv-modal-header {
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  z-index: 10;
+}
+
+.cv-modal-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.cv-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cv-modal-full-view {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+}
+
+.cv-modal-full-view:hover {
+  color: var(--text-primary);
+}
+
+.cv-modal-close {
+  background: none;
+  border: 1px solid var(--border-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.cv-modal-close:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  background-color: var(--bg-muted);
+}
+
+.cv-modal-body {
+  flex-grow: 1;
+  width: 100%;
+  height: calc(100% - 79px);
+  background-color: #1c1c1c;
+  position: relative;
+}
+
+/* Responsive Alt Skills Grid */
+@media (max-width: 1024px) {
+  .skills-grid-alt {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid-alt {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .skill-box-alt {
+    padding: 24px;
+  }
+  
+  .cv-modal-overlay {
+    padding: 12px;
+  }
+  
+  .cv-modal-container {
+    height: 90vh;
+  }
+  
+  .cv-modal-header {
+    padding: 16px 20px;
+  }
+  
+  .cv-modal-actions {
+    gap: 16px;
+  }
+}
+
