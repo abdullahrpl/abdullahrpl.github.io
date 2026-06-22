@@ -30,7 +30,6 @@ html, body {
   font-family: "Exo", "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -76,47 +75,28 @@ img {
 
 .container-xl {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1720px;
   margin: 0 auto;
-  padding: 0 4vw;
+  padding: 0 5%;
 }
 
+/* Lenis Smooth Scroll Configuration */
+html.lenis, html.lenis body {
+  height: auto;
+}
 
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
 
-/* Global Transition Panels (Sliding Diagonal Curtains) */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
   pointer-events: none;
-}
-
-.panel__wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.panel-left, .panel-right {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0b0b0b;
-  transform: skew(0, -45deg);
-  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
-}
-
-.panel-left {
-  left: -50vw;
-}
-
-.panel-right {
-  right: -50vw;
 }

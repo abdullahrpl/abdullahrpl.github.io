@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { translations } from '../data/translations';
 
 const Header = ({ onNavigate, currentPage, lang, setLang }) => {
@@ -23,7 +23,7 @@ const Header = ({ onNavigate, currentPage, lang, setLang }) => {
   useEffect(() => {
     if (currentPage !== 'home') return;
 
-    const sections = ['hero', 'about', 'projects', 'certificates', 'skills', 'contact'];
+    const sections = ['hero', 'about', 'projects', 'certificates', 'skills', 'experience', 'contact'];
     const options = {
       root: null,
       rootMargin: '-40% 0px -40% 0px',
@@ -136,6 +136,13 @@ const Header = ({ onNavigate, currentPage, lang, setLang }) => {
             onClick={(e) => handleNavLinkClick(e, 'skills')}
           >
             {translations[lang].nav.skills}
+          </a>
+          <a 
+            href="#experience" 
+            className={`nav__item ${currentPage === 'home' && activeSection === 'experience' ? 'active' : ''}`}
+            onClick={(e) => handleNavLinkClick(e, 'experience')}
+          >
+            {translations[lang].nav.experience}
           </a>
           <a 
             href="#contact" 

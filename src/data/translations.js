@@ -6,6 +6,7 @@ export const translations = {
       projects: 'Projects',
       certifications: 'Certifications',
       skills: 'Skills',
+      experience: 'Experience',
       contact: 'Contact',
     },
     hero: {
@@ -19,8 +20,6 @@ export const translations = {
     about: {
       title: 'ABOUT',
       p1: "I'm a developer based in Bogor, Indonesia with a focus on creating clean, user-centered digital experiences. I believe in the power of simplicity and thoughtful design.",
-      p2: 'I am currently a student with a strong interest in web development, seeking opportunities to gain real-world experience and grow my skills through hands-on projects.',
-      p3: "When I'm not coding, you'll find me exploring new coffee shops, reading about design, or taking photographs around the city.",
     },
     projects: {
       title: 'PROJECTS',
@@ -36,6 +35,9 @@ export const translations = {
     },
     skills: {
       title: 'SKILLS',
+    },
+    experience: {
+      title: 'WORK EXPERIENCE',
     },
     contact: {
       title: 'CONTACT',
@@ -54,6 +56,7 @@ export const translations = {
       projects: 'Proyek',
       certifications: 'Sertifikasi',
       skills: 'Keahlian',
+      experience: 'Pengalaman',
       contact: 'Kontak',
     },
     hero: {
@@ -67,8 +70,6 @@ export const translations = {
     about: {
       title: 'TENTANG',
       p1: 'Saya adalah seorang developer yang berbasis di Bogor, Indonesia dengan fokus pada pembuatan pengalaman digital yang bersih dan berpusat pada pengguna. Saya percaya pada kekuatan kesederhanaan dan desain yang dipikirkan dengan matang.',
-      p2: 'Saat ini saya adalah seorang pelajar dengan minat yang kuat dalam pengembangan web, mencari peluang untuk mendapatkan pengalaman dunia nyata dan mengembangkan keterampilan saya melalui proyek-proyek praktis.',
-      p3: 'Ketika saya tidak sedang coding, Anda dapat menemukan saya sedang menjelajahi kedai kopi baru, membaca tentang desain, atau mengambil foto di sekitar kota.',
     },
     projects: {
       title: 'PROYEK',
@@ -84,6 +85,9 @@ export const translations = {
     },
     skills: {
       title: 'KEAHLIAN',
+    },
+    experience: {
+      title: 'PENGALAMAN KERJA',
     },
     contact: {
       title: 'KONTAK',

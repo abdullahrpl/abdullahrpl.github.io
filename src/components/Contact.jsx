@@ -7,7 +7,7 @@ const Contact = ({ lang }) => {
       <div className="container-xl">
         <div className="section-header-bazil">
           <h2 className="heading-section-outlined">
-            <span>05 / </span>{translations[lang].contact.title}
+            <span>06 / </span>{translations[lang].contact.title}
           </h2>
         </div>
 

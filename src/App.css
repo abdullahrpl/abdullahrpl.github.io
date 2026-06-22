@@ -45,64 +45,106 @@
   opacity: 0;
 }
 
-/* Preloader styles */
+/* Preloader & Curtain Transitions */
 .preloader {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  background: var(--bg-primary);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  background: transparent;
+  pointer-events: all;
+  transition: visibility 0s linear;
 }
 
-.preloader.hide {
-  opacity: 0;
+.preloader.is--hidden {
   visibility: hidden;
   pointer-events: none;
+  transition-delay: 0.8s;
 }
 
-.panel-left-anim, .panel-right-anim {
+/* Sliding curtain */
+.preloader__curtain {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-secondary);
-  transform: skew(0, -45deg);
+  background: #0a0a0a;
   z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: transform;
 }
 
-.panel-left-anim {
-  left: -50%;
-  transform: translate3d(0, 0, 0) skew(0, -45deg);
+/* Slide open/shut states */
+.preloader.is--hidden .preloader__curtain {
+  transform: translateY(-100%);
 }
 
-.panel-right-anim {
-  right: -50%;
-  transform: translate3d(0, 0, 0) skew(0, -45deg);
+.preloader.is--active .preloader__curtain {
+  transform: translateY(0);
 }
 
+/* Preloader Content Wrapper */
 .preloader__content {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--text-primary);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 2vw;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  animation: pulse 1.5s infinite alternate;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  100% { transform: scale(1.05); opacity: 1; }
+.preloader__content.is--faded-out {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* Initial Load Layout */
+.preloader__brand-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader__logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 12px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-right: -12px;
+  text-transform: uppercase;
+}
+
+/* Expanding Line */
+.preloader__line {
+  width: 60px;
+  height: 1px;
+  background: var(--accent-color);
+  animation: expandLine 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Transition Layout */
+.preloader__page-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: var(--text-secondary);
+  margin-right: -8px;
+  text-transform: uppercase;
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60px; }
 }
 
 /* Minimalist Nav (bazil.fr style) */
@@ -120,7 +162,7 @@
 .nav.scrolled {
   background-color: rgba(11, 11, 11, 0.9);
   backdrop-filter: blur(12px);
-  padding: 20px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -137,8 +179,8 @@
 .nav__logo-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 24px;
-  letter-spacing: -1.5px;
+  font-size: 30px;
+  letter-spacing: -1.8px;
   color: var(--text-primary);
   transition: var(--transition-fast);
 }
@@ -150,12 +192,12 @@
 .nav__menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
 
 .nav__item {
   font-family: "Exo", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--text-secondary);
   transition: var(--transition-fast);
@@ -178,9 +220,9 @@
 .wg-selector {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-secondary);
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 50px;
   transition: var(--transition-fast);
 }
@@ -193,12 +235,12 @@
 /* Pill CTA Button */
 .cta.menu {
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
   border: 1px solid var(--text-primary);
   border-radius: 50px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   background-color: transparent;
   transition: var(--transition-fast);
 }
@@ -1042,3 +1084,101 @@
   }
 }
 
+/* --- EXPERIENCE SECTION DESIGN --- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  padding: 48px 24px;
+  margin: 0 -24px;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  border-radius: 16px;
+}
+
+/* Remove border on last item */
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-item:hover {
+  background-color: var(--bg-secondary);
+  border-bottom-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.experience-item:hover + .experience-item {
+  border-top-color: transparent;
+}
+
+.experience-duration {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-role {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  transition: var(--transition-fast);
+}
+
+.experience-item:hover .experience-role {
+  color: var(--accent-color);
+}
+
+.experience-company {
+  font-family: "Exo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.experience-desc {
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+/* Responsive Media Queries for Experience */
+@media (max-width: 768px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 16px;
+    margin: 0 -16px;
+  }
+  
+  .experience-role {
+    font-size: 20px;
+  }
+  
+  .experience-duration {
+    margin-top: 0;
+    font-size: 12px;
+  }
+}
