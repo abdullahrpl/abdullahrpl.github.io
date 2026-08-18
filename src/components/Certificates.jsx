@@ -49,7 +49,6 @@ const Certificates = ({ lang }) => {
             <span>03 / </span>{translations[lang].certificates.title}
           </h2>
         </div>
-
         <div className="certificates-scroller">
           {certificatesList.map((cert, index) => (
             <div className="certificate-card-bazil" key={index}>

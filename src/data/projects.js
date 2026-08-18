@@ -2,16 +2,6 @@
 // Adding a new project is as simple as adding a new object to this array!
 export const projectsData = [
   {
-    title: 'E-Commerce Platform',
-    description: {
-      EN: 'A minimal online store with focus on user experience and fast checkout.',
-      ID: 'Toko online minimalis dengan fokus pada pengalaman pengguna dan pembayaran cepat.',
-    },
-    image: '/images/SEM2-1RPL.png',
-    link: 'https://yamyam.vercel.app/',
-    tags: ['JavaScript', 'Tailwind CSS'],
-  },
-  {
     title: 'E-Library Website',
     description: {
       EN: 'An online library, where librarian put their book data.',
